@@ -1,0 +1,23 @@
+{
+  "name": "site-updater",
+  "version": "0.0.1",
+  "description": "Updates the Code Fellows site based on contentful web hooks",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/codefellows/site-updater.git"
+  },
+  "keywords": [
+    "contentful",
+    "codefellows"
+  ],
+  "author": "Ivan Storck",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/codefellows/site-updater/issues"
+  },
+  "homepage": "https://github.com/codefellows/site-updater#readme"
+}
