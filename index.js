@@ -19,5 +19,14 @@ server.on('ContentManagement.*', function(topic, req){
   // topic is available as string
   // => e.g. ContentManagement.Asset.unpublish
   console.log('Request came in for: ' + topic);
+})
+
+server.on('ContentManagement.Entry.unpublish', function(req){
+  console.log('An entry was unpublished!');
+  updater()
+})
+
+server.on('ContentManagement.Entry.publish', function(req){
+  console.log('An entry was published!');
   updater()
 })
