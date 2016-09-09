@@ -5,7 +5,10 @@ const fs = require('fs-extra-promise')
 if (fs.existsSync('.env')) require('dotenv').config()
 
 // Create server with default options
-var server = require('contentful-webhook-server')()
+var server = require('contentful-webhook-server')({
+  username: process.env.BASIC_AUTH_USER
+  password: process.env.BASIC_AUTH_PASS
+})
 var port = process.env.PORT || 3000
 
 // Start listening for requests

@@ -14,13 +14,17 @@ Use a standard server setup (e.g. t2-micro) with the Prerequisites and [pm2](htt
 
 e.g. https://www.digitalocean.com/community/tutorials/how-to-use-pm2-to-setup-a-node-js-production-environment-on-an-ubuntu-vps
 
+`cp .env.example .env` and *put in **your values** instead of the example ones*
+
 # Usage
 
 `pm2 start index` starts the web server that processes the webhooks from Contentful.
 
 Go to https://app.contentful.com/spaces/PUT-SPACE-ID-HERE/settings/webhooks to point the webhook to this server.
 
-To manually update the site content:
+Use `pm2 restart index` after pulling the latest version of this app.
+
+### To manually update the site content:
 You must have the private key to the ec2 instance in your ~/.ssh directory (it's in passpack, search for ec2)
 
  - `ssh -i ~/.ssh/cf-contentful-gatsby-website.pem ubuntu@site-updater.codefellows.org`
@@ -42,14 +46,12 @@ You must have the private key to the ec2 instance in your ~/.ssh directory (it's
 Send a pull request, please!
 
 Stuff to work on:
-- http basic auth
 - SSL support
-- flexible config for repositories (in dotenv?)
-- topic handling (besides any update)
-- error handling
-- tests
-- documentation
-- get this working for free on https://zeit.co/now/
+- Topic handling (besides any entry updates)
+- More error handling
+- Tests
+- Better documentation
+- Get this working for free on https://zeit.co/now/
 
 # Author
 
