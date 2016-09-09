@@ -32,6 +32,8 @@ You must have the private key to the ec2 instance in your ~/.ssh directory (it's
 
 # Troubleshooting
 
+- When using ssh, `tmux attach -t0` to attach to the existing tmux session on the server
+- check that `pm2 start index.js` has been run from the site-updater directory
 - check that the manual process works and watch for any errors
 - make sure you can connect via git on the command line to the bitbucket repo
 - make sure you have set the port to 80 in a file called .env in the home directory (otherwise default is 3000 for dev)
