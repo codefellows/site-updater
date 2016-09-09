@@ -25,11 +25,11 @@ server.on('ContentManagement.*', function(topic, req){
 })
 
 server.on('ContentManagement.Entry.unpublish', function(req){
-  console.log(`An entry was unpublished: ${req.fields.slug}`);
+  console.log(`An entry was unpublished: ${JSON.stringify(req, null, 2)}`);
   updater()
 })
 
 server.on('ContentManagement.Entry.publish', function(req){
-  console.log(`An entry was published: ${req.fields.slug}`);
+  console.log(`An entry was published: ${JSON.stringify(req, null, 2)}`);
   updater()
 })
