@@ -1,7 +1,7 @@
 {
   "name": "site-updater",
   "version": "0.0.1",
-  "description": "Updates a website site based on contentful web hooks",
+  "description": "Updates a website repo based on contentful web hooks",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
