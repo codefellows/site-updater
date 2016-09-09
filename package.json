@@ -1,7 +1,7 @@
 {
   "name": "site-updater",
   "version": "0.0.1",
-  "description": "Updates the Code Fellows site based on contentful web hooks",
+  "description": "Updates a website site based on contentful web hooks",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
@@ -13,7 +13,8 @@
   },
   "keywords": [
     "contentful",
-    "codefellows"
+    "codefellows",
+    "aerobatic"
   ],
   "author": "Ivan Storck",
   "license": "MIT",
@@ -22,6 +23,7 @@
   },
   "homepage": "https://github.com/codefellows/site-updater#readme",
   "dependencies": {
-    "contentful-webhook-server": "^1.2.0"
+    "contentful-webhook-server": "^1.2.0",
+    "shelljs": "^0.7.4"
   }
 }
