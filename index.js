@@ -25,7 +25,7 @@ server.on('ContentManagement.*', function(topic, req){
 })
 
 server.on('ContentManagement.Entry.unpublish', function(req){
-  console.log(`An entry was unpublished: ${req)}`);
+  console.log(`An entry was unpublished: ${req}`);
   updater()
 })
 
