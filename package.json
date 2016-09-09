@@ -24,6 +24,8 @@
   "homepage": "https://github.com/codefellows/site-updater#readme",
   "dependencies": {
     "contentful-webhook-server": "^1.2.0",
+    "dotenv": "^2.0.0",
+    "fs-extra-promise": "^0.4.0",
     "shelljs": "^0.7.4"
   }
 }

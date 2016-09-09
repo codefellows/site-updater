@@ -1,4 +1,8 @@
-var updater = require('./lib/updater')
+const updater = require('./lib/updater')
+const fs = require('fs-extra-promise')
+
+// Requires a test to see if .env file exists because it will not on CI build
+if (fs.existsSync('.env')) require('dotenv').config()
 
 // Create server with default options
 var server = require('contentful-webhook-server')()
