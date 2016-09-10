@@ -14,7 +14,7 @@ Use a standard server setup (e.g. t2-micro) with the Prerequisites and [pm2](htt
 
 e.g. https://www.digitalocean.com/community/tutorials/how-to-use-pm2-to-setup-a-node-js-production-environment-on-an-ubuntu-vps
 
-`cp .env.example .env` and *put in **your values** instead of the example ones*
+`cp .env.example .env` and *put in your values instead of the example ones*
 
 # Usage
 
