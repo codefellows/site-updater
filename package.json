@@ -29,7 +29,8 @@
     "dotenv": "^2.0.0",
     "fs-extra-promise": "^0.4.0",
     "safe-json-stringify": "^1.0.3",
-    "shelljs": "^0.7.4"
+    "shelljs": "^0.7.4",
+    "slack-notify": "^0.1.6"
   },
   "devDependencies": {
     "eslint": "^3.5.0",
