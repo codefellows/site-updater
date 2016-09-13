@@ -1,35 +1,38 @@
+/* eslint-disable semi, global-require, no-console, prefer-arrow-callback */
 const updater = require('./lib/updater')
 const fs = require('fs-extra-promise')
+const safeJsonStringify = require('safe-json-stringify')
 
 // Requires a test to see if .env file exists because it will not on CI build
 if (fs.existsSync('.env')) require('dotenv').config()
 
 // Create server with default options
-var server = require('contentful-webhook-server')({
+const server = require('contentful-webhook-server')({
   username: process.env.BASIC_AUTH_USER,
-  password: process.env.BASIC_AUTH_PASS
+  password: process.env.BASIC_AUTH_PASS,
 })
-var port = process.env.PORT || 3000
+
+const port = process.env.PORT || 3000
 
 // Start listening for requests
-server.listen(port, function(){
- console.log('Contentful webhook server running on port ' + port)
+server.listen(port, function listening() {
+  console.log(`Contentful webhook server running on port ${port}`)
 })
 
 // Handler for all successful requests
 // Is not emitted when an error occurs
-server.on('ContentManagement.*', function(topic, req){
+server.on('ContentManagement.*', function anyReq(topic, req) {
   // topic is available as string
   // => e.g. ContentManagement.Asset.unpublish
-  console.log('Request came in for: ' + topic);
+  console.log(`Request came in for: ${topic} ${safeJsonStringify(req)}`)
 })
 
-server.on('ContentManagement.Entry.unpublish', function(req){
-  console.log(`An entry was unpublished: ${req}`);
+server.on('ContentManagement.Entry.unpublish', function unpublishReq(req) {
+  console.log(`An entry was unpublished: ${safeJsonStringify(req)}`)
   updater()
 })
 
-server.on('ContentManagement.Entry.publish', function(req){
-  console.log(`An entry was published: ${req}`);
+server.on('ContentManagement.Entry.publish', function publishReq(req) {
+  console.log(`An entry was published: ${safeJsonStringify(req)}`)
   updater()
 })
