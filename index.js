@@ -19,14 +19,6 @@ server.listen(port, function listening() {
   console.log(`Contentful webhook server running on port ${port}`)
 })
 
-// Handler for all successful requests
-// Is not emitted when an error occurs
-server.on('ContentManagement.*', function anyReq(topic, req) {
-  // topic is available as string
-  // => e.g. ContentManagement.Asset.unpublish
-  console.log(`Request came in for: ${topic} ${safeJsonStringify(req)}`)
-})
-
 server.on('ContentManagement.Entry.unpublish', function unpublishReq(req) {
   console.log(`An entry was unpublished: ${safeJsonStringify(req)}`)
   updater()
