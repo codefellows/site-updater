@@ -27,16 +27,16 @@
   "dependencies": {
     "contentful-webhook-server": "^1.2.0",
     "dotenv": "^2.0.0",
-    "fs-extra-promise": "^0.4.0",
+    "fs-extra-promise": "^0.4.1",
     "safe-json-stringify": "^1.0.3",
     "shelljs": "^0.7.4",
     "slack-notify": "^0.1.6"
   },
   "devDependencies": {
     "eslint": "^3.5.0",
-    "eslint-config-airbnb": "^11.0.0",
-    "eslint-plugin-import": "^1.14.0",
-    "eslint-plugin-jsx-a11y": "^2.2.1",
-    "eslint-plugin-react": "^6.2.0"
+    "eslint-config-airbnb": "^11.1.0",
+    "eslint-plugin-import": "^1.15.0",
+    "eslint-plugin-jsx-a11y": "^2.2.2",
+    "eslint-plugin-react": "^6.2.2"
   }
 }
